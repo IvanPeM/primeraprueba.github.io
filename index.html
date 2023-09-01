@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 6</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/27fe5071b6.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="img/peluqueria.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 1. Poder ver las citas ya concertadas.
+        2. Añadir nuevas citas a la lista.
+        3. Validar que todos los campos introducidos son correctos (campos obligatorios y
+            fecha seleccionada a futuro).
+        4. Validar que la fecha/hora seleccionada está libre. (Para simplificar esto las citas
+            siempre serán de 1h)
+        5. Incluir vista de administración con contraseña. Mientras la vista de administración
+            esté activa se pueden eliminar citas.
+    -->
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-md bg-secondary">
+        <div class="container-fluid">
+            <nav class="navbar navbar-dark">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <a class="navbar-brand m-auto px-4">
+                <img src="img/peluqueria.png" alt="icono peluqueria" width="60" height="auto">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="d-flex ms-auto" id="administrador">
+                    <input class="form-control me-2" type="text" id="user" placeholder="Usuario" required>
+                    <input class="form-control me-2" type="password" id="pass" placeholder="Contraseña" required>
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="textoAdmin"></div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div id="tabla" class="m-5"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-2">
+                <form id="anhadir">
+                    <div class="form-outline mb-4">
+                        <input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="date" name="fecha" id="fecha" class="form-control" required>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="number" name="hora" id="hora" class="form-control" min="7" max="23" required>
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" class="btn btn-outline-light btn-block">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><br>
+    <div id="textoError"></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

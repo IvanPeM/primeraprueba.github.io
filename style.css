@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+i {
+    cursor: pointer;
+}
+
+i:hover{
+    scale: 1.3;
+}
